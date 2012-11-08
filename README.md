@@ -39,13 +39,16 @@ Registers  username with the LocalMessageRouter.
 ```ruby
 client.register
 ```
-Send a message to the server.
+
+Send a message, 'hello world' to the user, foobar.
+foobar's client.listen will return '@sandbochs hello world'
 
 ```ruby
-client.send("hello world")
+client.send("@foobar hello world")
 ```
 
 Wait for a message from the server, returns a string
 
 ```ruby
 client.listen
+```
