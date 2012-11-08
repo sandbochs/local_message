@@ -7,6 +7,7 @@ This was spawned after encountering limitations during a group project at Dev Bo
 ## Todo
 
 - Encapsulate classes as a module, LocalMessage
+- Write specs (Half TDD'd...)
 - Markup with Rdoc
 - Add messaging list functionality to send messages to multiple users
 - Add a command to list all registered usernames & messaging lists
