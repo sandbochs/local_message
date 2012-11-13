@@ -53,7 +53,7 @@ class LocalMessageRouter
   end
 
   def register?(message)
-    return true if /@register/.match(message)
+    return true if /^@register/.match(message)
     false
   end
 
