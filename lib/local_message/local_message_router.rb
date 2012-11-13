@@ -96,7 +96,7 @@ class LocalMessageRouter
   end
 
   def strip_message(message)
-    message.split[1..-1].join(" ")
+    message.split(" ", 2)[1]
   end
 
   def forward_message(sender, recipient, message)
