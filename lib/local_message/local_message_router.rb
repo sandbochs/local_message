@@ -23,10 +23,12 @@ class LocalMessageRouter
     end while true
   end
 
+private
+
   def handle(message, port, ip)
     if register?(message)
       username, port = strip_username_port(message)
-      register(username, port.to_i, ip)
+      register(username, port, ip)
 
     elsif has_recipient?(message)
       recipient = strip_recipient(message)
@@ -56,7 +58,7 @@ class LocalMessageRouter
 
   def strip_username_port(message)
     /@register\s+(.+)\s+(\d+)/.match(message)
-    [$1, $2]
+    [$1, $2.to_i]
   end
 
   def has_recipient?(message)
@@ -76,11 +78,11 @@ class LocalMessageRouter
     if registered?(recipient)
       info = registered_users[recipient]
       message_with_sender = "@#{sender} #{strip_message(message)}"
-      send(info.hostname, info.port, message_with_sender)
+      send_message(info.hostname, info.port, message_with_sender)
     end
   end
 
-  def send(hostname, port, message)
+  def send_message(hostname, port, message)
     Thread.new do
       socket = TCPSocket.open(hostname, port)
       socket.write(message)
