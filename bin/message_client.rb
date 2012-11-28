@@ -26,7 +26,7 @@ while true
     Thread.new do
       print "Enter message ( @username hello world )>> "
       message = gets.chomp
-      lmclient.send(message)
+      lmclient.send_message(message)
       sent_message = true
     end
   end
