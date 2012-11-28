@@ -12,17 +12,13 @@ class LocalMessageClient
   end
 
   def register
-    send("@register #{username} #{listen_port}")
+    send_message("@register #{username} #{listen_port}")
   end
 
-  def send(message)
+  def send_message(message)
     socket = TCPSocket.open(server, port)
     socket.write(message)
     socket.close
-  end
-
-  def new_listen_port
-    @listen_port = Random.rand(1000..30_000)
   end
 
   def listen

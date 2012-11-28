@@ -6,13 +6,11 @@ This was spawned after encountering limitations during a group project at Dev Bo
 
 ## Todo
 
-- Encapsulate classes as a module, LocalMessage
-- Write specs (Half TDD'd...)
 - Markup with Rdoc
 - Add messaging list functionality to send messages to multiple users
 - Add a command to list all registered usernames & messaging lists
 - Add exception handling to the router
-- Add ability to turn console logging on or off for router and client
+- Add ability to turn console logging on or off for router
 
 ## Usage
 
@@ -34,7 +32,7 @@ LocalMessageClient => Interacts with the LocalMessageRouter. Takes the server ho
 client = LocalMessageClient.new('localhost', 5000, 'sandbochs')
 ```
 
-Registers  username with the LocalMessageRouter.
+Registers username with the LocalMessageRouter.
 
 ```ruby
 client.register
@@ -44,7 +42,7 @@ Send a message, 'hello world' to the user, foobar.
 foobar's client.listen will return '@sandbochs hello world'
 
 ```ruby
-client.send("@foobar hello world")
+client.send_message("@foobar hello world")
 ```
 
 Wait for a message from the server, returns a string

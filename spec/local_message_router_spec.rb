@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe LocalMessageRouter do
+  
   let(:router) { LocalMessageRouter.new(5500) }
 
   before(:all) do
