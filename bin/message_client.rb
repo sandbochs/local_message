@@ -1,11 +1,12 @@
-require './lib/local_message/local_message_client'
+#!/usr/bin/env ruby
+require '../lib/local_message/local_message_client'
 
 sent_message = true
 recv_message = true
 print "Please enter your username >> "
 username = gets.chomp
 
-lmclient = LocalMessageClient.new('192.168.0.154', '5500', username)
+lmclient = LocalMessageClient.new('localhost', '5500', username)
 lmclient.register
 
 while true
@@ -14,8 +15,7 @@ while true
     recv_message = false
     Thread.new do
       inc_msg = lmclient.listen
-      puts
-      puts "Incoming message >> #{inc_msg}"
+      puts "\nIncoming message >> #{inc_msg}"
       recv_message = true
       print "Enter message ( @username hello world )>> "
     end

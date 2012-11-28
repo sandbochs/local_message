@@ -17,11 +17,8 @@ class LocalMessageClient
 
   def send(message)
     socket = TCPSocket.open(server, port)
-    sleep 1
     socket.write(message)
     socket.close
-    #puts "Waiting for server acknowledgement..."
-    #listen
   end
 
   def new_listen_port
@@ -29,10 +26,8 @@ class LocalMessageClient
   end
 
   def listen
-    #puts "Listening on #{listen_port}..."
     server = TCPServer.open(listen_port)
     client = server.accept
-    #puts "Connection open, waiting for message..."
     message = client.read
     client.close
     server.close
