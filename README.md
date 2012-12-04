@@ -1,4 +1,4 @@
-## local_message
+## LocalMessage
 
 A Ruby Gem for sending messages as strings across a local network. (UDP style no handshake or acknowledgements)
 
