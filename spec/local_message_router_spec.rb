@@ -44,7 +44,7 @@ describe LocalMessageRouter do
     end
 
     it "returns false if the user is not registered" do
-      router.send(:registered?, 'username').should be_false
+      router.send(:registered?, 'username4').should be_false
     end
   end
 
