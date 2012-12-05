@@ -8,7 +8,9 @@ class LocalMessageClient
     @server = server_hostname
     @port = server_port
     @username = user_name
-    @listen_port = Random.rand(2000..30_000)
+    
+    prng = Random.new
+    @listen_port = prng.rand(2000..30000)
   end
 
   def register
