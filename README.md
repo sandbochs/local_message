@@ -1,4 +1,4 @@
-## LocalMessage
+## LocalMessage [![Build Status](https://secure.travis-ci.org/sandbochs/local_message.png?branch=master)](https://travis-ci.org/sandbochs/local_message)
 
 A Ruby Gem for sending messages as strings across a local network. (UDP style no handshake or acknowledgements)
 
